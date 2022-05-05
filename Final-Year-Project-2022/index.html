@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet"  href="style.css">
+    <title>Freshberry</title>
+</head>
+
+
+<body>
+<nav>
+    <div id="logo-img">
+        <h2> Fresh Berry </h2>
+    </div>
+</nav>
+
+<div id="searchbox">
+    <input type="text" placeholder="Search Here">
+</div>
+
+<div id="banner">
+    <h1>FRESHBERRY</h1>
+    <h3>Quality Over Quantity</h3>
+</div>
+
+<main>
+    <h2 class="section-heading">About the Website </h2>
+
+    <section id="section-source">
+        <p>
+            India is an agricultural country where a variety of fruits and vegetables are grown and produced for consumption as well as export.
+            India is at second position after China in production of fruits.
+            Texture, Color & freshness are the important parameters for fruit quality identification.
+            The color recognition is very important process in ripeness detection.
+            The ripeness detection is external quality factor. It is also important to check for any bacterial/fungal growth on the fruit/vegetable.
+            Because of these various factors, defected fruits can be recognized.
+
+        </p>
+<!--        <a href="#" class="btn-readmore1">GitHub Profile</a>-->
+    </section>
+
+    <h2 class="section-heading">Analyzing Real time object </h2>
+
+
+    <section>
+        <div class="container">
+            <video autoplay = "true" id = "videoElement">
+
+            </video>
+        </div>
+
+        <div class="result">
+            <h2> Results : </h2>
+        </div>
+
+        <div class="div1">
+            The analysed result will be displayed here.
+        </div>
+    </section>
+
+    <section>
+        <div>
+            <btn href="#" class="submit_button">Submit</btn>
+        </div>
+    </section>
+
+    <h2 class="section-heading">Analysis of Pre-captured image </h2>
+
+    <section>
+
+        <div class="drag-area">
+            <i id="icon" class="fas fa-cloud-upload-alt"></i>
+            <header>Drag & Drop to Upload File</header>
+            <span>OR</span>
+            <button>Browse File</button>
+            <input type="file" hidden>
+        </div>
+
+        <div class="result">
+            <h2> Results : </h2>
+        </div>
+
+        <div class="div1">
+            The analysed result will be displayed here.
+        </div>
+
+        <script src="drag_drop_script.js"></script>
+    </section>
+
+    <section>
+        <div>
+            <btn href="#" class="submit_button">Submit</btn>
+        </div>
+    </section>
+
+    </section>
+
+
+    <script>
+        let video = document.querySelector("#videoElement");
+
+        if(navigator.mediaDevices.getUserMedia){
+            navigator.mediaDevices.getUserMedia({video: true})
+            .then(function(stream){
+                video.srcObject = stream;
+            })
+            .catch(function(error){
+                console.log("Something went wrong!");
+            })
+        }else{
+            console.log("getUserMedia not supported!");
+        }
+    </script>
+
+    <footer>
+<!--        <div id="left-footer">-->
+<!--            <h3>Quick Links</h3>-->
+<!--            <p>-->
+<!--            <ul>-->
+<!--                <li>-->
+<!--                    <a href="#">Home</a>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <a href="#">About</a>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <a href="#">Privacy Policy</a>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <a href="#">Blogs</a>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <a href="#">Projects</a>-->
+<!--                </li>-->
+
+<!--                <li>-->
+<!--                    <a href="#">Contacts</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--            </p>-->
+<!--        </div>-->
+
+        <div id="right-footer">
+            <h3>Follow us on</h3>
+            <div id="social-media-footer">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-facebook fa-2x"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-youtube fa-2x"></i>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <i class="fab fa-github fa-2x"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>This website is developed on trial basis</p>
+        </div>
+    </footer>
+
+</main>
+
+<script src="main.js"></script>
+
+</body>
+</html>
